@@ -299,3 +299,111 @@ footer {
 .magnetic {
   transition: transform 0.2s ease;
 }
+
+/* -----------------------------------
+   MOBILE RESPONSIVE FIXES
+----------------------------------- */
+
+@media(max-width: 768px) {
+
+  /* Reduce padding for sections */
+  section {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  /* Header spacing */
+  header {
+    padding: 2rem 1rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  /* Navigation buttons smaller */
+  nav a {
+    margin: 4px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 14px;
+  }
+
+  /* Profile image resize */
+  .profile-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-name {
+    font-size: 0.9rem;
+  }
+
+  /* Projects card spacing */
+  .project {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .project h3 {
+    font-size: 1.1rem;
+  }
+
+  .project a {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* Contact list */
+  .contact-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 0.9rem;
+  }
+
+  /* Fix overlapping background circles */
+  body::before,
+  body::after {
+    width: 180px;
+    height: 180px;
+    filter: blur(90px);
+  }
+}
+
+@media(max-width: 480px) {
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  section {
+    padding: 1.2rem;
+  }
+
+  .project {
+    padding: 0.8rem;
+  }
+
+  .project a {
+    width: 100%;
+    text-align: center;
+  }
+}
