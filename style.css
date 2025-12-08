@@ -105,6 +105,11 @@ body{
   border-color: rgba(79,195,247,0.15);
   color:#cfefff;
 }
+.hero .text-muted {
+  color: #cfd9e8 !important;   /* soft visible light-blue text */
+  font-weight: 400;
+}
+
 
 /* Footer */
 .footer{
