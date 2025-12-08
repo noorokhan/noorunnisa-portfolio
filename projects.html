@@ -1,188 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Programming Projects | Noorunnisa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects | Noorunnisa</title>
 
-  <!-- Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
-
 <body>
 
-  <!-- Background Animations -->
-  <div class="hearts-container"></div>
-  <canvas id="particleCanvas"></canvas>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-  <!-- HEADER -->
-  <header class="fade-in text-center mb-4" data-aos="fade-down">
-    <h1>💻 Programming & Analytics Projects</h1>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Noorunnisa Khan</a>
 
-    <nav class="mt-3">
-      <a href="index.html" class="magnetic">Home</a>
-      <a href="projects.html" class="active magnetic">Programming</a>
-      <a href="writing.html" class="magnetic">Writing</a>
-      <a href="contact.html" class="magnetic">Contact</a>
-    </nav>
-  </header>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <!-- PROJECTS SECTION -->
-  <section class="about fade-in container" data-aos="fade-up">
-
-    <h2>Some of My Projects</h2>
-    <hr>
-
-    <p class="text-center">These are my core projects built while learning Android Development, Django, SQL, Data Analytics, and Machine Learning.</p>
-
-    <!-- ================================
-         📱 Native Android App (Java)
-       ================================= -->
-    <div class="project" data-aos="fade-up" id="expiry">
-      <h3>📱 MyExpiryTracker – Native Android App (Java)</h3>
-
-      <p>A mobile application built in Android Studio that tracks expiry dates of food, medicine, groceries, and skincare items.</p>
-
-      <ul>
-        <li>Add, edit, and delete items</li>
-        <li>SQLite local database</li>
-        <li>Notifications before expiry</li>
-        <li>Clean minimalist UI</li>
-      </ul>
-
-      <p><strong>Tech Used:</strong> Java, Android Studio, XML, SQLite</p>
-
-      <a href="https://github.com/noorokhan/MyExpiryTracker-Native" target="_blank" class="magnetic">
-        View Source on GitHub
-      </a>
+      <div id="menu2" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="writing.html">Writing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- ================================
-         📱 Hybrid App (Monaca)
-       ================================= -->
-    <div class="project" data-aos="fade-up">
-      <h3>📱 MyExpiryTracker – Hybrid App (Monaca + Cordova)</h3>
+  <!-- MAIN -->
+  <main class="container pt-navbar">
+    
+    <!-- HEADER -->
+    <header class="text-center mb-4" data-aos="fade-down">
+      <h1 class="fw-bold">Projects</h1>
+      <p class="text-muted">Practical projects in Android, Django, SQL, Data Analytics, and Machine Learning.</p>
+    </header>
 
-      <p>A cross-platform hybrid version created using Monaca Framework and Cordova plugins.</p>
+    <!-- PROJECTS GRID -->
+    <section class="row g-4">
 
-      <ul>
-        <li>Responsive HTML/CSS UI</li>
-        <li>Cordova plugins for notifications</li>
-        <li>Cross-platform friendly</li>
-      </ul>
+      <!-- ANDROID APP -->
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="card project-card h-100">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MyExpiryTracker — Android (Native)</h5>
+            <p class="card-text text-muted small mb-2">
+              Tracks expiry dates with notifications. Built using Java + SQLite.
+            </p>
+            <p class="mt-auto mb-2"><strong>Tech:</strong> Java • Android Studio • SQLite</p>
 
-      <p><strong>Tech Used:</strong> Monaca, HTML, CSS, JavaScript, Cordova</p>
-
-      <a href="https://github.com/noorokhan/MyExpiryTracker-Hybrid" target="_blank" class="magnetic">
-        View Source on GitHub
-      </a>
-    </div>
-
-    <!-- ================================
-         💻 Django Digital ID Generator
-       ================================= -->
-    <div class="project" data-aos="fade-up" id="django">
-      <h3>💻 Django Digital ID Generator</h3>
-
-      <p>A Django web application that creates digital ID cards with live preview and downloadable PDF export.</p>
-
-      <ul>
-        <li>Image upload + auto-resize</li>
-        <li>Live ID card preview</li>
-        <li>PDF export using ReportLab</li>
-      </ul>
-
-      <p><strong>Tech Used:</strong> Python, Django, Pillow, ReportLab</p>
-
-      <a href="https://github.com/noorokhan/Digital-ID-Generator" target="_blank" class="magnetic">
-        View Source on GitHub
-      </a>
-    </div>
-
-    <!-- ================================
-         🗄️ SQL Project
-       ================================= -->
-    <div class="project" data-aos="fade-up">
-      <h3>🗄️ Inventory Management Database (SQL)</h3>
-
-      <p>A full SQL-based inventory system with products, suppliers, stock levels, and purchase tracking.</p>
-
-      <ul>
-        <li>Normalized relational schema</li>
-        <li>Primary + Foreign key constraints</li>
-        <li>Inventory queries and stock alerts</li>
-      </ul>
-
-      <p><strong>Tech Used:</strong> SQL, Database Design, Joins, Constraints</p>
-
-      <a href="Inventory_Management_System.sql" download class="magnetic">
-        Download SQL File
-      </a>
-    </div>
-
-    <!-- ================================
-         📊 Tableau Dashboard
-       ================================= -->
-    <div class="project" data-aos="fade-up" id="tableau">
-      <h3>📊 Global Excess Mortality Dashboard (Tableau)</h3>
-
-      <p>A Tableau dashboard analyzing global excess mortality during 2020–2025.</p>
-
-      <!-- Tableau Embed -->
-      <div class='tableauPlaceholder' id='vizMortality'>
-        <noscript><img src="https://public.tableau.com/static/images/OR/OR160039/Dashboard1/1.png"></noscript>
-        <object class='tableauViz'></object>
+            <div class="d-flex gap-2">
+              <a class="btn btn-outline-primary btn-sm" href="https://github.com/noorokhan/MyExpiryTracker-Native" target="_blank">GitHub</a>
+              <a class="btn btn-outline-secondary btn-sm" href="#" onclick="alert('Live demo is not available for mobile apps.')">Live</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <a href="https://public.tableau.com/views/OR160039/Dashboard1" target="_blank" class="magnetic">
-        Open on Tableau Public
-      </a>
-    </div>
+      <!-- HYBRID APP -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="card project-card h-100">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MyExpiryTracker — Hybrid (Monaca)</h5>
+            <p class="card-text text-muted small mb-2">
+              Lightweight hybrid version using Monaca/Cordova.
+            </p>
+            <p class="mt-auto mb-2"><strong>Tech:</strong> HTML • CSS • JavaScript • Cordova</p>
 
-    <!-- ================================
-         🤖 AI Job Market Analysis
-       ================================= -->
-    <div class="project" data-aos="fade-up" id="kaggle">
-      <h3>🤖 AI Job Market Analysis (Python + ML)</h3>
+            <a class="btn btn-outline-primary btn-sm" href="https://github.com/noorokhan/MyExpiryTracker-Hybrid" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
 
-      <p>Machine Learning + EDA project analyzing 2,995 AI job listings to extract trends and clusters.</p>
+      <!-- DJANGO PROJECT -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="card project-card h-100">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Django Digital ID Generator</h5>
+            <p class="card-text text-muted small mb-2">
+              Generates custom ID cards with PDF export and image processing.
+            </p>
+            <p class="mt-auto mb-2"><strong>Tech:</strong> Django • Pillow • ReportLab</p>
 
-      <ul>
-        <li>EDA (salary, skills, roles)</li>
-        <li>KMeans clustering</li>
-        <li>WordCloud + charts</li>
-        <li>Hiring pattern insights</li>
-      </ul>
+            <a class="btn btn-outline-primary btn-sm" href="https://github.com/noorokhan/Digital-ID-Generator" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
 
-      <a href="https://www.kaggle.com/code/noorunnisakhan/notebook16d44b5263" target="_blank" class="magnetic">
-        View on Kaggle
-      </a>
+      <!-- SQL PROJECT -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="card project-card h-100">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Inventory Management (SQL)</h5>
+            <p class="card-text text-muted small mb-2">
+              Full relational database with suppliers, stock, and sample queries.
+            </p>
+            <p class="mt-auto mb-2"><strong>Tech:</strong> SQL • Schema Design</p>
 
-      <a href="Data_Analytics_Project_Notebook.ipynb" download class="magnetic">
-        Download Notebook
-      </a>
-    </div>
+            <a class="btn btn-outline-primary btn-sm" href="Inventory_Management_System.sql" target="_blank">View SQL</a>
+          </div>
+        </div>
+      </div>
 
-  </section>
+      <!-- TABLEAU -->
+      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="320">
+        <div class="card project-card">
+          <div class="card-body">
+            <h5 class="card-title">Global Excess Mortality — Tableau</h5>
+            <p class="card-text text-muted small">
+              Tableau dashboard visualizing global mortality trends from 2020–2025.
+            </p>
+            <a class="link-primary" href="https://public.tableau.com/views/OR160039/Dashboard1" target="_blank">Open on Tableau Public →</a>
+          </div>
+        </div>
+      </div>
 
-  <!-- FOOTER -->
-  <footer class="text-center mt-5">
-    <p>© 2025 Noorunnisa Khan | All Rights Reserved</p>
+      <!-- KAGGLE -->
+      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="400">
+        <div class="card project-card">
+          <div class="card-body">
+            <h5 class="card-title">AI Job Market Analysis — Kaggle Notebook</h5>
+            <p class="card-text text-muted small">
+              Clustering, hiring patterns, salary trends, and EDA on 2,995 job listings.
+            </p>
+            <a class="link-primary" href="https://www.kaggle.com/code/noorunnisakhan/notebook16d44b5263" target="_blank">View on Kaggle →</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container text-center small text-muted">© 2025 Noorunnisa Khan</div>
   </footer>
 
-  <!-- JS Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
   <script src="script.js"></script>
+  <script> AOS.init(); </script>
 
 </body>
 </html>

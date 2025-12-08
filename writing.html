@@ -1,135 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Academic Writing | Noorunnisa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Writing | Noorunnisa</title>
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 
 <body>
 
-  <!-- Floating Effects -->
-  <div class="hearts-container"></div>
-  <canvas id="particleCanvas"></canvas>
+  <!-- Background particles -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-  <!-- HEADER -->
-  <header class="fade-in text-center mb-4" data-aos="fade-down">
-    <h1>📚 Academic Writing</h1>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Noorunnisa</a>
 
-    <nav class="mt-3">
-      <a href="index.html" class="magnetic">Home</a>
-      <a href="projects.html" class="magnetic">Programming</a>
-      <a href="writing.html" class="active magnetic">Writing</a>
-      <a href="contact.html" class="magnetic">Contact</a>
-    </nav>
-  </header>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu3">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <!-- WRITING PORTFOLIO SECTION -->
-  <section class="about fade-in container" data-aos="fade-up">
-
-    <h2>Writing Portfolio</h2>
-    <hr>
-
-    <p class="text-center">
-      I work as an IT technical academic writer and create structured, research-based content across 
-      IT, management, social sciences, and education.  
-      Below are selected samples that highlight my analytical writing, research depth, and referencing accuracy.
-    </p>
-
-
-    <!-- ================================
-         DIGITAL MARKETING THESIS
-    ================================= -->
-    <div class="project" data-aos="fade-up">
-      <h3>📝 Digital Marketing Strategy Thesis – Porsche Case Study</h3>
-
-      <p>
-        A thesis-style analytical report exploring how Porsche uses digital marketing strategies,
-        consumer engagement, branding, and online touchpoints to maintain a competitive position 
-        in the luxury automobile market. The research includes academic frameworks, structured 
-        analysis, and Chicago-style referencing.
-      </p>
-
-      <ul>
-        <li>Detailed evaluation of Porsche’s digital campaigns</li>
-        <li>Research-backed insights using Chicago referencing</li>
-        <li>Analysis of audience behaviour, marketing funnels, and engagement strategy</li>
-        <li>Structured academic reporting aligned with thesis requirements</li>
-      </ul>
-
-      <p><strong>Skills:</strong> Marketing analysis, Chicago referencing, academic writing, research synthesis</p>
-
-      <a href="Digital_Marketing_Porsche_Thesis.pdf" target="_blank" class="magnetic">
-        View PDF
-      </a>
+      <div id="menu3" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="writing.html">Writing</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
+  <!-- MAIN -->
+  <main class="container pt-navbar">
 
-
-    <!-- ================================
-         AWS LEADERSHIP REPORT
-    ================================= -->
-    <div class="project" data-aos="fade-up">
-      <h3>💼 Leading Innovation with AWS</h3>
-
-      <p>
-        A 1500-word analytical report on leadership and cloud transformation using Amazon Web Services.  
-        The paper examines modern leadership models, digital transformation strategy, and IT innovation processes.
+    <header class="text-center mb-4" data-aos="fade-down">
+      <h1 class="fw-bold">Academic Writing</h1>
+      <p class="text-muted">
+        Selected samples that demonstrate analytical writing, structured research, and proper academic referencing.
       </p>
+    </header>
 
-      <a href="AWS_Leadership_Report.pdf" target="_blank" class="magnetic">View PDF</a>
-    </div>
+    <!-- CARDS -->
+    <section class="row g-4">
 
+      <!-- Porsche Thesis -->
+      <div class="col-md-6" data-aos="fade-up">
+        <article class="card project-card h-100 p-3">
+          <h5 class="fw-semibold">Digital Marketing Thesis — Porsche</h5>
+          <p class="small text-muted">
+            Thesis-style evaluation of Porsche’s digital strategy using academic frameworks and Chicago referencing.
+          </p>
+          <a class="link-primary" href="Digital_Marketing_Porsche_Thesis.pdf" target="_blank">View PDF →</a>
+        </article>
+      </div>
 
-    <!-- ================================
-         WARTIME BRITAIN – CHICAGO REFERENCING
-    ================================= -->
-    <div class="project" data-aos="fade-up">
-      <h3>📚 Wartime Experiences in Britain – Historical Research Report</h3>
+      <!-- AWS Report -->
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <article class="card project-card h-100 p-3">
+          <h5 class="fw-semibold">Leading Innovation with AWS</h5>
+          <p class="small text-muted">
+            A 1500-word analytical report on cloud transformation, leadership models, and digital innovation.
+          </p>
+          <a class="link-primary" href="AWS_Leadership_Report.pdf" target="_blank">View PDF →</a>
+        </article>
+      </div>
 
-      <p>
-        A historical research paper analyzing daily life in Britain during the Second World War, with 
-        emphasis on the Blitz, civilian morale, and government messaging.  
-        The report uses primary sources such as wartime letters, newspaper articles, and official notices, 
-        referencing them using the Chicago Manual of Style.
-      </p>
+      <!-- Historical Report -->
+      <div class="col-12" data-aos="fade-up" data-aos-delay="160">
+        <article class="card project-card p-3">
+          <h5 class="fw-semibold">Wartime Britain — Historical Research Report</h5>
+          <p class="small text-muted">
+            Chicago-style historical research using primary sources (letters, newspapers, wartime documents).
+          </p>
+          <a class="link-primary" href="Wartime_Britain_Chicago_Research_Report.pdf" target="_blank">View PDF →</a>
+        </article>
+      </div>
 
-      <ul>
-        <li>Analysis of British civilian resilience during the Blitz</li>
-        <li>Use of primary historical sources</li>
-        <li>Discussion of wartime identity and propaganda messaging</li>
-        <li>Full Chicago referencing and structured academic style</li>
-      </ul>
+    </section>
 
-      <p><strong>Skills:</strong> Historical analysis, Chicago referencing, research writing, source evaluation</p>
-
-      <a href="Wartime_Britain_Chicago_Research_Report.pdf" target="_blank" class="magnetic">
-        View PDF
-      </a>
-    </div>
-
-  </section>
-
+  </main>
 
   <!-- FOOTER -->
-  <footer class="text-center mt-5">
-    <p>© 2025 Noorunnisa Khan | All Rights Reserved</p>
+  <footer class="footer mt-5">
+    <div class="container text-center small text-muted">
+      © 2025 Noorunnisa Khan
+    </div>
   </footer>
 
-  <!-- JS Libraries -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
   <script src="script.js"></script>
+  <script>AOS.init();</script>
 
 </body>
 </html>

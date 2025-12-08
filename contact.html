@@ -1,83 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact | Noorunnisa</title>
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- AOS Scroll Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 
 <body>
 
-  <!-- Floating Effects -->
-  <div class="hearts-container"></div>
-  <canvas id="particleCanvas"></canvas>
+  <!-- Background particles -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-  <!-- HEADER -->
-  <header class="fade-in text-center" data-aos="fade-down">
-    <h1>📨 Contact Me</h1>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Noorunnisa</a>
 
-    <nav class="mt-3">
-      <a href="index.html" class="magnetic">Home</a>
-      <a href="projects.html" class="magnetic">Programming</a>
-      <a href="writing.html" class="magnetic">Writing</a>
-      <a href="contact.html" class="active magnetic">Contact</a>
-    </nav>
-  </header>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu4">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <!-- CONTACT SECTION -->
-  <section class="about container fade-in" data-aos="fade-up">
+      <div id="menu4" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="writing.html">Writing</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <h2>Let’s Connect</h2>
-    <hr>
+  <!-- MAIN CONTENT -->
+  <main class="container pt-navbar">
 
-    <p class="text-center">
-      You can reach me anytime through email or using my social links below.
-    </p>
+    <header class="text-center mb-4" data-aos="fade-down">
+      <h1 class="fw-bold">Get in touch</h1>
+      <p class="text-muted">You can reach me via email or connect with me on LinkedIn or GitHub.</p>
+    </header>
 
-    <ul class="contact-list mt-3">
-      <li data-aos="fade-right">
-        <span>📧 Email:</span>
-        <a href="mailto:noorunnisakhan60@gmail.com">
-          noorunnisakhan60@gmail.com
-        </a>
-      </li>
+    <section class="row g-4">
 
-      <li data-aos="fade-right" data-aos-delay="100">
-        <span>🌐 LinkedIn:</span>
-        <a href="https://www.linkedin.com/in/noorunnisa-khan-337811227" target="_blank">
-          linkedin.com/in/noorunnisa-khan-337811227
-        </a>
-      </li>
+      <div class="col-md-6" data-aos="fade-up">
+        <div class="card project-card p-3 h-100">
+          <strong>📧 Email</strong>
+          <p class="mb-1"><a href="mailto:noorunnisakhan60@gmail.com">noorunnisakhan60@gmail.com</a></p>
+        </div>
+      </div>
 
-      <li data-aos="fade-right" data-aos-delay="200">
-        <span>💻 GitHub:</span>
-        <a href="https://github.com/noorokhan" target="_blank">
-          github.com/noorokhan
-        </a>
-      </li>
-    </ul>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="card project-card p-3 h-100">
+          <strong>🌐 LinkedIn</strong>
+          <p class="mb-1"><a href="https://www.linkedin.com/in/noorunnisa-khan-337811227" target="_blank">
+            linkedin.com/in/noorunnisa-khan-337811227
+          </a></p>
+        </div>
+      </div>
 
-  </section>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="card project-card p-3 h-100">
+          <strong>💻 GitHub</strong>
+          <p class="mb-1"><a href="https://github.com/noorokhan" target="_blank">github.com/noorokhan</a></p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-  <footer class="text-center mt-4">
-    <p>© 2025 Noorunnisa Khan | All Rights Reserved</p>
+  <footer class="footer mt-5">
+    <div class="container text-center small text-muted">
+      © 2025 Noorunnisa Khan
+    </div>
   </footer>
 
-  <!-- JS -->
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
   <script src="script.js"></script>
+  <script>AOS.init();</script>
 
 </body>
 </html>
