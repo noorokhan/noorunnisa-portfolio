@@ -1,409 +1,189 @@
-/* -------------------------------
-   LAVENDER & MAUVE AESTHETIC 🌙✨
--------------------------------- */
-:root {
-  --lavender: #F3E8FF;
-  --lavender-light: #F8F2FF;
-  --mauve: #C7A4D8;
-  --mauve-dark: #A67ACB;
-  --violet: #BFA1D9;
-  --text: #4E3A57;
-  --card: rgba(255, 255, 255, 0.75);
-}
-
-/* -------------------------------
-   GLOBAL
--------------------------------- */
-body {
+:root{
+  --bg-dark: #071225;
+  --glass: rgba(255,255,255,0.06);
+  --accent: #4FC3F7;
+  --muted: #9aa6b2;
+  --card: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --radius: 14px;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, var(--lavender-light), var(--lavender), #EBDCF9);
-  background-attachment: fixed;
-  color: var(--text);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background: linear-gradient(180deg,#071225 0%, #0b2437 60%);
+  color:#e7eef6;
+  overflow-x:hidden;
+}
+
+/* Background Particle Canvas */
+#bgCanvas{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  z-index:-1;
+  pointer-events:none;
+}
+
+.nav-glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  padding:0.6rem 0;
+}
+
+/* HERO */
+.hero{
+  padding-top:110px;
+  padding-bottom:48px;
+  text-align:center;
+}
+
+.profile-img-lg{
+  width:120px;height:120px;border-radius:50%;
+  border:3px solid rgba(255,255,255,0.06);
+  object-fit:cover;
+  box-shadow: 0 10px 30px rgba(12,40,60,0.6);
+}
+
+.accent{
+  background: linear-gradient(90deg,var(--accent), #9bb7ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.about-text {
+  color: #dce6f3 !important;     /* Light readable text */
+  font-size: 1rem;
   line-height: 1.7;
-  position: relative;
-  overflow-x: hidden;
 }
 
-/* Floating dreamy blobs */
-body::before,
-body::after {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: var(--violet);
-  opacity: 0.20;
-  filter: blur(140px);
+.about-card p {
+  color: #c9d4e0 !important;     /* Makes all <p> inside About more visible */
+}
+.about-card h2 {
+  color: #ffffff;
+}
+#aboutTyping {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  min-height: 120px; /* prevents layout jump */
 }
 
-body::before {
-  top: -120px;
-  left: -60px;
+
+/* Cards */
+.main-content .about-card, .project-card{
+  margin-top:24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:20px;
+  box-shadow: 0 6px 30px rgba(6,20,32,0.6);
+  border:1px solid rgba(255,255,255,0.03);
 }
 
-body::after {
-  bottom: -150px;
-  right: -50px;
-}
+.project-card h5{ color:#eaf4ff; }
+.project-card .card-body{ color:var(--muted); }
 
-/* -------------------------------
-   HEADER
--------------------------------- */
-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem;
-}
-
-header h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.highlight {
-  background: linear-gradient(90deg, var(--mauve), var(--violet));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-header p {
-  margin-top: 0.7rem;
-  opacity: 0.85;
-}
-
-/* -------------------------------
-   NAVIGATION
--------------------------------- */
-nav {
-  margin-top: 1.3rem;
-}
-
-nav a {
-  text-decoration: none;
-  margin: 0 10px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  color: var(--text);
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-nav a:hover {
-  background: var(--mauve);
-  color: white;
-}
-
-nav .active {
-  background: var(--mauve-dark);
-  color: white;
-  box-shadow: 0 0 12px rgba(166, 122, 203, 0.6);
-}
-
-/* -------------------------------
-   SECTIONS (GLASS CARD)
--------------------------------- */
-section {
-  max-width: 850px;
-  margin: 3rem auto;
-  padding: 2.5rem;
-  background: var(--card);
-  border-radius: 25px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-  border: 1px solid rgba(199, 164, 216, 0.35);
-  position: relative;
-  transition: 0.3s ease;
-}
-
-section:hover {
-  transform: translateY(-4px);
-}
-
-/* Section glow */
-section::before {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle, rgba(199,164,216,0.25), transparent 70%);
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  filter: blur(60px);
-  z-index: -1;
-}
-
-/* -------------------------------
-   PROFILE PICTURE
--------------------------------- */
-.profile-wrapper {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.profile-img {
-  width: 115px;
-  height: 115px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--mauve);
-  box-shadow:
-    0 8px 18px rgba(167, 122, 203, 0.25),
-    0 0 14px rgba(167, 122, 203, 0.15);
-}
-
-.profile-name {
-  margin-top: 0.7rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--mauve-dark);
-}
-
-/* -------------------------------
-   HEADINGS
--------------------------------- */
-h2 {
-  text-align: center;
-  font-size: 1.4rem;
-  color: var(--mauve-dark);
-  font-weight: 600;
-}
-
-h2::after {
-  content: " ✿";
-  color: var(--mauve);
-}
-
-hr {
-  width: 90px;
-  height: 3px;
-  border: none;
-  margin: 0.5rem auto 1.5rem;
-  background: radial-gradient(circle, var(--mauve), var(--violet));
-  border-radius: 6px;
-}
-
-/* -------------------------------
-   PROJECT CARDS
--------------------------------- */
-.project {
-  padding: 1.4rem;
-  margin: 1.4rem 0;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.85);
-  border-left: 6px solid var(--mauve);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.06);
-  transition: 0.3s ease;
-}
-
-.project:hover {
+/* Lift Hover */
+.card.project-card:hover{
   transform: translateY(-6px);
-  border-left-color: var(--mauve-dark);
+  transition: 0.22s ease;
 }
 
-.project a {
+/* Buttons */
+.btn-primary{
+  background: linear-gradient(90deg,var(--accent), #6fbef8);
+  border:none;
+  box-shadow:0 8px 20px rgba(79,195,247,0.12);
+}
+
+.btn-outline-primary{
+  border-color: rgba(79,195,247,0.15);
+  color:#cfefff;
+}
+
+/* Footer */
+.footer{
+  padding:40px 0;
+  color:var(--muted);
+}
+
+/* NEW FIX (REPLACES pt-6) */
+.pt-navbar{
+  padding-top:120px;
+}
+
+@media(max-width:768px){
+  .hero{ padding-top:140px; padding-bottom:28px;}
+  .profile-img-lg{ width:100px; height:100px; }
+  .pt-navbar{ padding-top:140px; }
+}
+/* -----------------------------
+   Neon hover, navbar shadow, typing, theme
+   Append this to style.css
+------------------------------*/
+
+/* navbar shadow when scrolled */
+.nav-scrolled {
+  box-shadow: 0 10px 30px rgba(2,10,20,0.45);
+  backdrop-filter: blur(8px);
+  transition: box-shadow 220ms ease;
+}
+
+/* neon lift on project card hover */
+.project-card, .project {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.project-card:hover, .project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(102, 73, 156, 0.12);
+  border-left-color: rgba(166,122,203,1);
+}
+
+/* typing cursor */
+#typed-name {
   display: inline-block;
-  margin-top: 0.7rem;
-  padding: 10px 22px;
-  border-radius: 22px;
-  background: linear-gradient(90deg, var(--mauve-dark), var(--mauve));
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
+  border-right: 2px solid rgba(78,58,87,0.18);
+  padding-right: 6px;
+  white-space: nowrap;
+}
+#typed-name.typed-done {
+  border-right-color: transparent;
 }
 
-.project a:hover {
-  box-shadow: 0 0 15px rgba(199,164,216,0.5);
+/* theme: data attribute based */
+:root[data-theme="light"] {
+  --bg-dark: #f6f7fb;
+  --glass: rgba(20,25,30,0.03);
+  --accent: #6f4ed8;
+  --muted: #55606e;
+  --card: rgba(255,255,255,0.85);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg-dark: #071225;
+  --glass: rgba(255,255,255,0.03);
+  --accent: #4FC3F7;
+  --muted: #9aa6b2;
+  --card: rgba(255,255,255,0.03);
+  color-scheme: dark;
 }
 
-/* -------------------------------
-   CONTACT LIST
--------------------------------- */
-.contact-list {
-  list-style: none;
-  padding-left: 0;
+/* theme toggle visual */
+#theme-toggle {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1rem;
 }
+#theme-toggle.pulse { transform: scale(1.06); transition: transform 160ms ease; }
 
-.contact-list li {
-  background: rgba(255,255,255,0.8);
-  padding: 0.9rem 1rem;
-  margin: 0.7rem 0;
-  border-radius: 18px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* -------------------------------
-   ANIMATIONS
--------------------------------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.9s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hearts animation */
-.hearts-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
-.heart {
-  position: absolute;
-  color: rgba(167, 122, 203, 0.8);
-  animation: floatUp 4s linear forwards;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-120px); opacity: 0; }
-}
-
-/* -------------------------------
-   FOOTER
--------------------------------- */
-footer {
-  text-align: center;
-  padding: 1rem;
-  opacity: 0.7;
-}
-
-/* Particle Canvas */
-#particleCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-/* Magnetic hover */
-.magnetic {
-  transition: transform 0.2s ease;
-}
-
-/* -----------------------------------
-   MOBILE RESPONSIVE FIXES
------------------------------------ */
-
-@media(max-width: 768px) {
-
-  /* Reduce padding for sections */
-  section {
-    margin: 1.5rem 1rem;
-    padding: 1.5rem;
-    border-radius: 18px;
-  }
-
-  /* Header spacing */
-  header {
-    padding: 2rem 1rem 1rem;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-    line-height: 1.3;
-  }
-
-  header p {
-    font-size: 0.9rem;
-  }
-
-  /* Navigation buttons smaller */
-  nav a {
-    margin: 4px;
-    padding: 6px 12px;
-    font-size: 0.85rem;
-    border-radius: 14px;
-  }
-
-  /* Profile image resize */
-  .profile-img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .profile-name {
-    font-size: 0.9rem;
-  }
-
-  /* Projects card spacing */
-  .project {
-    padding: 1rem;
-    margin: 1rem 0;
-  }
-
-  .project h3 {
-    font-size: 1.1rem;
-  }
-
-  .project a {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-  }
-
-  /* Contact list */
-  .contact-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    padding: 0.9rem;
-  }
-
-  /* Fix overlapping background circles */
-  body::before,
-  body::after {
-    width: 180px;
-    height: 180px;
-    filter: blur(90px);
-  }
-}
-
-@media(max-width: 480px) {
-
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-  }
-
-  section {
-    padding: 1.2rem;
-  }
-
-  .project {
-    padding: 0.8rem;
-  }
-
-  .project a {
-    width: 100%;
-    text-align: center;
-  }
+/* small helper: hide heavy canvas on very small screens */
+@media (max-width: 520px) {
+  #bgCanvas{ display:none !important; }
 }
