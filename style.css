@@ -114,8 +114,13 @@ body{
 /* Footer */
 .footer{
   padding:40px 0;
-  color:var(--muted);
+  color:var(--muted)
 }
+
+.text-muted {
+  color: #c6d2e1 !important;
+}
+
 
 /* NEW FIX (REPLACES pt-6) */
 .pt-navbar{
@@ -191,4 +196,25 @@ body{
 /* small helper: hide heavy canvas on very small screens */
 @media (max-width: 520px) {
   #bgCanvas{ display:none !important; }
+}
+
+.project-card strong i {
+  color: var(--accent);
+  margin-right: 6px;
+  font-size: 1.1rem;
+}
+
+.contact-icon-card {
+  border-radius: 14px;
+  transition: transform .2s ease, box-shadow .3s ease;
+}
+
+.contact-icon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(79,195,247,0.15);
+}
+
+.contact-icon {
+  font-size: 42px;
+  color: var(--accent);
 }

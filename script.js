@@ -227,7 +227,7 @@ const PARTICLE_MAX = 120;       // cap particles
 ------------------------------*/
 
 const aboutText = 
-"I write technical academic content for IT and computer science subjects and build small but practical projects in Python, SQL, Tableau, Django and Android. I enjoy breaking complex topics into clear explanations and creating clean, reproducible code for data analysis. I'm currently developing my skills in data analytics, EDA, dashboard building and machine learning while continuing my work as an IT academic writer.";
+"I write technical academic content for IT and computer science subjects and build small but practical projects in Python, SQL, Tableau, Django, and Android. I enjoy breaking complex topics into clear explanations and creating clean, reproducible code for data analysis. I'm also developing my skills in data analytics, EDA, dashboards, and machine learning while continuing my work as an IT academic writer. I create portfolio websites using WordPress as well, focusing on clean, responsive layouts.";
 
 let index = 0;
 
